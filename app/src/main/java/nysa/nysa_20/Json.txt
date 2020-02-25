@@ -44,7 +44,7 @@
          {  
             "type":"list",
             "title":"",
-            "list":"&#8226 ;   Itchy, watery eyes <br> &#8226; Sneezing <br> &#8226; Itchy, runny nose <br> &#8226; Feeling tired or ill <br> "
+            "list":"&#8226    Itchy, watery eyes <br> &#8226; Sneezing <br> &#8226; Itchy, runny nose <br> &#8226; Feeling tired or ill <br> "
          },
          {  
             "type":"paragraph",

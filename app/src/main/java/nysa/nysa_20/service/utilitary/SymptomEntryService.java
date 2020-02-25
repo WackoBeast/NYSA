@@ -1,13 +1,6 @@
 package nysa.nysa_20.service.utilitary;
 
-import android.widget.TextView;
-
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,20 +37,20 @@ public class SymptomEntryService {
         int score = 0;
         score += symptomEntry.getSymptomsPainEntry()
                 .stream()
-                .mapToInt(s -> s.getSymptomRating() * 5)
+                .mapToInt(s -> s.getSymptomRating() * 4)
                 .sum();
 
         score += symptomEntry.getSymptomsRespirationEntry()
                 .stream()
-                .mapToInt(s -> s.getSymptomRating() * 5)
+                .mapToInt(s -> s.getSymptomRating() * 4)
                 .sum();
         score += symptomEntry.getSymptomsSightEntry()
                 .stream()
-                .mapToInt(s -> s.getSymptomRating() * 5)
+                .mapToInt(s -> s.getSymptomRating() * 4)
                 .sum();
         score += symptomEntry.getSymptomsSkinEntry()
                 .stream()
-                .mapToInt(s -> s.getSymptomRating() * 5)
+                .mapToInt(s -> s.getSymptomRating() * 4)
                 .sum();
 
 

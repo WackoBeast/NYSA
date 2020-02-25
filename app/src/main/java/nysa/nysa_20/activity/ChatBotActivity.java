@@ -3,9 +3,9 @@ package nysa.nysa_20.activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nysa.nysa_20.R;
-import nysa.nysa_20.model.LocationDataKeeper;
 import nysa.nysa_20.model.Messages;
 import nysa.nysa_20.model.adaptors.ChatBotActiviytMessageAdaptor;
 import nysa.nysa_20.service.utilitary.ActivityShiftService;
@@ -51,7 +50,7 @@ public class ChatBotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_bot);
 
         initComponents();
-        Toast.makeText(ChatBotActivity.this, LocationDataKeeper.getLatitude()+" "+LocationDataKeeper.getLongitude()+" "+LocationDataKeeper.getLocality()+LocationDataKeeper.getCountry(),Toast.LENGTH_LONG).show();
+        //Toast.makeText(ChatBotActivity.this, LocationDataKeeper.getLatitude()+" "+LocationDataKeeper.getLongitude()+" "+LocationDataKeeper.getLocality()+LocationDataKeeper.getCountry(),Toast.LENGTH_LONG).show();
 
     }
 
