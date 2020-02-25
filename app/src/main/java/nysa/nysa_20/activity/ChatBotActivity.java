@@ -11,9 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -36,13 +36,14 @@ import nysa.nysa_20.service.utilitary.ActivityShiftService;
 
 public class ChatBotActivity extends AppCompatActivity {
     private EditText submitEditText;
-    private ImageView submitImageView, voiceCommandImageView;
+    private ImageButton submitImageButton;
     private final int REQ_CODE_SPEECH_INPUT = 100;
     private RecyclerView messagesRecycleView;
     private final List<Messages> messagesList = new ArrayList<>();
     private LinearLayoutManager mLinearLayout;
     private ChatBotActiviytMessageAdaptor mAdaptor;
     private ImageView logoImageView;
+    private boolean isSpeechInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +69,17 @@ public class ChatBotActivity extends AppCompatActivity {
         messagesRecycleView.setAdapter(mAdaptor);
 
         prepareSubmitEditText();
-        submitImageView.setOnClickListener(ev -> submitImageViewClicked());
-        voiceCommandImageView.setOnClickListener(ev -> promptSpeechInput());
+        submitImageButton.setOnClickListener(ev -> submitImageButtonClicked());
         logoImageView.setOnClickListener(ev -> ActivityShiftService.toMainActivity(this));
+    }
+
+    private void submitImageButtonClicked(){
+        if(isSpeechInput){
+            promptSpeechInput();
+        }
+        else{
+            submitTextClicked();
+        }
     }
 
     private void promptSpeechInput() {
@@ -87,13 +96,9 @@ public class ChatBotActivity extends AppCompatActivity {
 
             }
 
-
-
-
-
     }
 
-    private void submitImageViewClicked() {
+    private void submitTextClicked() {
 
         submitEditText.onEditorAction(EditorInfo.IME_ACTION_DONE);
             String messageSubmited = submitEditText.getText().toString();
@@ -119,12 +124,12 @@ public class ChatBotActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String message = s.toString().trim();
                 if(message.isEmpty()){
-                    voiceCommandImageView.setVisibility(View.VISIBLE);
-                    submitImageView.setVisibility(View.GONE);
+                    submitImageButton.setBackgroundResource(R.drawable.send_vocal_icon);
+                    isSpeechInput = true;
                 }
                 else{
-                    voiceCommandImageView.setVisibility(View.GONE);
-                    submitImageView.setVisibility(View.VISIBLE);
+                    submitImageButton.setBackgroundResource(R.drawable.send_icon);
+                    isSpeechInput = false;
                 }
             }
 
@@ -139,8 +144,7 @@ public class ChatBotActivity extends AppCompatActivity {
 
     private void assignComponentReferences() {
         submitEditText = findViewById(R.id.submitEditText);
-        submitImageView = findViewById(R.id.submitImageView);
-        voiceCommandImageView = findViewById(R.id.voiceCommandImageView);
+        submitImageButton = findViewById(R.id.submitButton);
         messagesRecycleView = findViewById(R.id.messagesRecycleView);
         logoImageView = findViewById(R.id.logoChatBot);
 
