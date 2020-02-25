@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.function.BiConsumer;
+
 import nysa.nysa_20.R;
 import nysa.nysa_20.model.Account;
 import nysa.nysa_20.model.AccountHolder;
@@ -53,6 +56,7 @@ public class AllergyRegisterActivity extends AppCompatActivity {
 
 
         initComponents();
+        retrieveData();
 
 
     }
@@ -238,5 +242,14 @@ public class AllergyRegisterActivity extends AppCompatActivity {
         ActivityShiftService.toMainActivity(this);
     }
 
+    void retrieveData(){
+        HashMap<String,Boolean> allergyMap = AccountHolder.getAccount().getAllergyMap();
+        BiConsumer<String,Boolean> data = (s,b) -> {
+            if(b==true){
+                textViewOnClick(s);
+            }
+        };
+        allergyMap.forEach( (s,b) -> data.accept(s,b));
+    }
 
 }

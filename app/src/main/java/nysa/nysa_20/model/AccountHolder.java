@@ -1,5 +1,6 @@
 package nysa.nysa_20.model;
 
+
 import nysa.nysa_20.service.localPersistance.MainLocalPersistenceService;
 
 public class AccountHolder {

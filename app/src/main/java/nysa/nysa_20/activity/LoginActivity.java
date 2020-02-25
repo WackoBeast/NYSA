@@ -2,28 +2,18 @@ package nysa.nysa_20.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import junit.framework.Test;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -34,11 +24,9 @@ import nysa.nysa_20.model.Account;
 import nysa.nysa_20.model.AccountHolder;
 import nysa.nysa_20.model.LoginFormular;
 import nysa.nysa_20.model.RegistrationFormular;
-import nysa.nysa_20.service.connectivity.LocationService;
 import nysa.nysa_20.service.connectivity.LoginService;
 import nysa.nysa_20.service.localPersistance.MainLocalPersistenceService;
 import nysa.nysa_20.service.utilitary.ActivityShiftService;
-import nysa.nysa_20.service.utilitary.PermissionService;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText;

@@ -5,9 +5,9 @@ import org.json.JSONObject;
 
 import java.util.concurrent.Callable;
 
+import nysa.nysa_20.model.Account;
 import nysa.nysa_20.model.AccountHolder;
 import nysa.nysa_20.model.RegistrationFormular;
-import nysa.nysa_20.model.Account;
 import nysa.nysa_20.service.localPersistance.MainLocalPersistenceService;
 import okhttp3.ResponseBody;
 import retrofit2.Call;

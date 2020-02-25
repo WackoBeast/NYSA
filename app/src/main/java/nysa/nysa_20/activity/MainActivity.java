@@ -1,22 +1,14 @@
 package nysa.nysa_20.activity;
 
-import android.location.LocationManager;
-import android.support.design.widget.TabLayout;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
-import android.widget.Toast;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import nysa.nysa_20.R;
-import nysa.nysa_20.model.LocationDataKeeper;
+import nysa.nysa_20.model.AccountHolder;
 import nysa.nysa_20.model.Toolbar_MainActivity;
 import nysa.nysa_20.model.adaptors.MainActivityPagerAdaptor;
-import nysa.nysa_20.service.connectivity.LocationService;
 
 public class MainActivity extends AppCompatActivity {
     private static ViewPager trackPager;
@@ -34,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
         //toolbar stays bottom
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
 
-        LocationService service = new LocationService(MainActivity.this);
+        //LocationService service = new LocationService(MainActivity.this);
 
+        String account = AccountHolder.getAccount().toString();
 
 
 

@@ -1,9 +1,8 @@
 package nysa.nysa_20.model.library_res;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
-public class ListItem {
+public class ListItem{
     private String title;
     private String description;
     private JSONArray toArt;

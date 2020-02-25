@@ -63,7 +63,7 @@ public class Account implements Serializable {
     }
 
     public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
+        //this.doctor = doctor;
     }
 
     @Override
