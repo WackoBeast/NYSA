@@ -68,6 +68,7 @@ public class ChatBotActivity extends AppCompatActivity {
         messagesRecycleView.setLayoutManager(mLinearLayout);
         messagesRecycleView.setAdapter(mAdaptor);
 
+
         prepareSubmitEditText();
         submitImageButton.setOnClickListener(ev -> submitImageButtonClicked());
         logoImageView.setOnClickListener(ev -> ActivityShiftService.toMainActivity(this));
@@ -268,6 +269,7 @@ public class ChatBotActivity extends AppCompatActivity {
             Messages m = new Messages("bot",s);
             messagesList.add(m);
             mAdaptor.notifyDataSetChanged();
+            messagesRecycleView.smoothScrollToPosition(messagesRecycleView.getAdapter().getItemCount());
 
         }
 
