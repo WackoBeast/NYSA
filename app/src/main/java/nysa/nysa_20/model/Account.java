@@ -22,7 +22,7 @@ public class Account implements Serializable {
         this.username = formular.getUsername();
         this.email = formular.getEmail();
         historyMap = new HashMap<>();
-
+        allergyMap = new HashMap<String, Boolean>();
 
     }
 

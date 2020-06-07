@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
 import nysa.nysa_20.R;
-import nysa.nysa_20.model.AccountHolder;
 import nysa.nysa_20.model.Toolbar_MainActivity;
 import nysa.nysa_20.model.adaptors.MainActivityPagerAdaptor;
 
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         //LocationService service = new LocationService(MainActivity.this);
 
-        String account = AccountHolder.getAccount().toString();
 
 
 

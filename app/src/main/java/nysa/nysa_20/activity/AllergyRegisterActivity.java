@@ -56,7 +56,11 @@ public class AllergyRegisterActivity extends AppCompatActivity {
 
 
         initComponents();
-        retrieveData();
+
+
+            retrieveData();
+
+
 
 
     }

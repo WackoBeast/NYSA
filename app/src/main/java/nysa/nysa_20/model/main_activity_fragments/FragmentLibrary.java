@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -71,7 +70,7 @@ public class FragmentLibrary extends Fragment {
         itemList = new ArrayList<>();
 
         // TODO: get url of JSON and initializeList(url)
-        initializeList(new String("https://api.myjson.com/bins/etfao"));
+        initializeList(new String("https://api.jsonbin.io/b/5edd33a8655d87580c45b0c9"));
 
         DeleteQuery = view.findViewById(R.id.delete_btn);
         SearchField = view.findViewById(R.id.search_field);
