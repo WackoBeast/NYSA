@@ -2,6 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+
+     lintOptions{
+         checkReleaseBuilds false
+     }
+
+
     defaultConfig {
         applicationId "nysa.nysa_20"
         minSdkVersion 26
@@ -10,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
     }
     buildTypes {
         release {
@@ -28,6 +36,7 @@ dependencies {
     implementation 'ai.api:sdk:2.0.7@aar'
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
